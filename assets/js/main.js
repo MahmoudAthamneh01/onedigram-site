@@ -6,13 +6,30 @@
 (function() {
     'use strict';
 
-    // Initialize AOS (Animate on Scroll)
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 100
-    });
+    // Simple scroll animation observer (replaces AOS)
+    function initScrollAnimations() {
+        const animatedElements = document.querySelectorAll('[data-aos]');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('aos-animate');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach(el => observer.observe(el));
+    }
+
+    // Initialize animations when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+    } else {
+        initScrollAnimations();
+    }
 
     // Language Toggle
     const langToggle = document.getElementById('langToggle');
