@@ -215,7 +215,8 @@
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
     
-    contactForm.addEventListener('submit', function(e) {
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const name = document.getElementById('name').value;
@@ -255,6 +256,7 @@
         // Reset form
         contactForm.reset();
     });
+    }
 
     // Lazy Loading Images
     if ('IntersectionObserver' in window) {
