@@ -1088,3 +1088,194 @@ img[loading="lazy"] {
 img[loading="lazy"].loaded {
     filter: blur(0);
 }
+
+/* Legal Pages Styles */
+.legal-page {
+    padding: 4rem 0;
+    min-height: 60vh;
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.legal-title {
+    font-size: 2.5rem;
+    color: var(--deep-blue);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.legal-updated {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.legal-text {
+    line-height: 1.8;
+}
+
+.legal-text h2 {
+    font-size: 1.5rem;
+    color: var(--soft-blue);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.legal-text p {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.legal-text ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.legal-text li {
+    margin-bottom: 0.5rem;
+}
+
+.legal-text a {
+    color: var(--coral);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.legal-text a:hover {
+    text-decoration: underline;
+}
+
+.lang-section[data-lang="ar"] {
+    direction: rtl;
+}
+
+/* Client Assurance Section */
+.client-assurance-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light-gray);
+}
+
+.client-assurance-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--coral);
+    text-align: center;
+}
+
+.client-assurance-title {
+    font-size: 1.5rem;
+    color: var(--deep-blue);
+    margin-bottom: 1rem;
+}
+
+.client-assurance-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Footer Business Info */
+.footer-business-info {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-business-info p {
+    margin: 0.3rem 0;
+}
+
+.footer-business-info a {
+    color: var(--coral);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-business-info a:hover {
+    color: var(--soft-blue);
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--light-gray);
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--coral);
+}
+
+.footer-links span {
+    color: var(--text-gray);
+}
+
+/* Hero Company Name */
+.hero-company-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--coral);
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments for legal pages */
+@media (max-width: 768px) {
+    .legal-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .legal-title {
+        font-size: 2rem;
+    }
+    
+    .legal-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    .client-assurance-card {
+        padding: 1.5rem;
+    }
+    
+    .client-assurance-title {
+        font-size: 1.3rem;
+    }
+    
+    .client-assurance-text {
+        font-size: 1rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .footer-links span {
+        display: none;
+    }
+}
+

@@ -65,10 +65,30 @@
                 element.textContent = englishText;
             });
             
+            // Toggle language sections for legal pages
+            document.querySelectorAll('.lang-section[data-lang="en"]').forEach(el => {
+                el.style.display = 'block';
+            });
+            document.querySelectorAll('.lang-section[data-lang="ar"]').forEach(el => {
+                el.style.display = 'none';
+            });
+            
             // Update page title and meta description
-            document.title = 'Onedigram - Smart Systems. Simple Growth.';
-            document.querySelector('meta[name="description"]').setAttribute('content', 
-                'We deliver SaaS and AI results without an in-house tech team.');
+            const pageTitle = document.title;
+            if (pageTitle.includes('أنظمة ذكية')) {
+                document.title = 'Onedigram - Smart Systems. Simple Growth.';
+            } else if (pageTitle.includes('شروط الخدمة')) {
+                document.title = 'Terms of Service - Onedigram';
+            } else if (pageTitle.includes('سياسة الإلغاء')) {
+                document.title = 'Refund & Cancellation Policy - Onedigram';
+            } else if (pageTitle.includes('سياسة الخصوصية')) {
+                document.title = 'Privacy Policy - Onedigram';
+            }
+            
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc && metaDesc.getAttribute('content').includes('نبني')) {
+                metaDesc.setAttribute('content', 'We deliver SaaS and AI results without an in-house tech team.');
+            }
         } else {
             html.setAttribute('lang', 'ar');
             html.setAttribute('dir', 'rtl');
@@ -81,10 +101,30 @@
                 element.textContent = arabicText;
             });
             
+            // Toggle language sections for legal pages
+            document.querySelectorAll('.lang-section[data-lang="en"]').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.lang-section[data-lang="ar"]').forEach(el => {
+                el.style.display = 'block';
+            });
+            
             // Update page title and meta description
-            document.title = 'Onedigram - أنظمة ذكية بنمو بسيط';
-            document.querySelector('meta[name="description"]').setAttribute('content', 
-                'Onedigram - نبني أنظمة ذكية بنمو بسيط. حلول SaaS وذكاء اصطناعي بدون فريق تقني داخلي.');
+            const pageTitle = document.title;
+            if (pageTitle.includes('Smart Systems')) {
+                document.title = 'Onedigram - أنظمة ذكية بنمو بسيط';
+            } else if (pageTitle.includes('Terms of Service')) {
+                document.title = 'شروط الخدمة - Onedigram';
+            } else if (pageTitle.includes('Refund')) {
+                document.title = 'سياسة الإلغاء والاسترداد - Onedigram';
+            } else if (pageTitle.includes('Privacy')) {
+                document.title = 'سياسة الخصوصية - Onedigram';
+            }
+            
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc && metaDesc.getAttribute('content').includes('deliver SaaS')) {
+                metaDesc.setAttribute('content', 'Onedigram - نبني أنظمة ذكية بنمو بسيط. حلول SaaS وذكاء اصطناعي بدون فريق تقني داخلي.');
+            }
         }
     }
 
