@@ -34,7 +34,7 @@
     // Language Toggle
     const langToggle = document.getElementById('langToggle');
     const html = document.documentElement;
-    let currentLang = 'ar';
+    let currentLang = 'en';
 
     // Load saved language preference
     const savedLang = localStorage.getItem('language');
@@ -56,12 +56,9 @@
             document.querySelector('.lang-ar').classList.remove('active');
             document.querySelector('.lang-en').classList.add('active');
             
-            // Update all elements with data-en attribute
+            // Restore English text
             document.querySelectorAll('[data-en]').forEach(element => {
                 const englishText = element.getAttribute('data-en');
-                if (!element.hasAttribute('data-ar')) {
-                    element.setAttribute('data-ar', element.textContent);
-                }
                 element.textContent = englishText;
             });
             
@@ -95,9 +92,12 @@
             document.querySelector('.lang-ar').classList.add('active');
             document.querySelector('.lang-en').classList.remove('active');
             
-            // Restore Arabic text
+            // Update all elements with data-ar attribute
             document.querySelectorAll('[data-ar]').forEach(element => {
                 const arabicText = element.getAttribute('data-ar');
+                if (!element.hasAttribute('data-en')) {
+                    element.setAttribute('data-en', element.textContent);
+                }
                 element.textContent = arabicText;
             });
             
